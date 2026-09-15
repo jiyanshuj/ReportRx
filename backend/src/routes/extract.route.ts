@@ -26,6 +26,9 @@ extractRouter.post('/extract', upload.single('file'), async (req, res, next) => 
     }
 
     const ocrText = await extractTextFromFile(file.buffer, file.originalname, file.mimetype);
+  console.log('--- RAW OCR TEXT START ---');
+  console.log(ocrText);
+  console.log('--- RAW OCR TEXT END ---');
     const parsedObservations = parseObservations(ocrText);
 
     if (parsedObservations.length === 0) {
