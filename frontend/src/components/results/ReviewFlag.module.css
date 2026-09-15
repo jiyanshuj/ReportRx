@@ -1,0 +1,33 @@
+.chip {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.normal {
+  color: var(--color-normal);
+  background: rgba(47, 111, 94, 0.1);
+}
+
+.high {
+  color: var(--color-high);
+  background: rgba(179, 64, 42, 0.1);
+}
+
+.low {
+  color: var(--color-low);
+  background: rgba(42, 92, 138, 0.1);
+}
+
+.review {
+  color: var(--color-review);
+  background: var(--color-review-bg);
+}
+
+.emptyChip {
+  color: var(--color-ink-muted);
+  font-size: 12px;
+}

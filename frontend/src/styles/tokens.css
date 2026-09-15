@@ -1,0 +1,30 @@
+:root {
+  /* color */
+  --color-bg: #eef0ec;
+  --color-surface: #ffffff;
+  --color-ink: #1c2624;
+  --color-ink-muted: #55625e;
+  --color-line: #d8ded8;
+  --color-line-strong: #b7c0b8;
+
+  --color-normal: #2f6f5e;
+  --color-high: #b3402a;
+  --color-low: #2a5c8a;
+  --color-review: #a6790a;
+  --color-review-bg: #f7ecd6;
+
+  /* type */
+  --font-display: 'Newsreader', Georgia, serif;
+  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+
+  --radius-sm: 3px;
+  --content-width: 760px;
+}

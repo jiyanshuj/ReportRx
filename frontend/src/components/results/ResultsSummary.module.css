@@ -1,0 +1,22 @@
+.summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.heading {
+  font-size: 20px;
+  color: var(--color-ink);
+}
+
+.count {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+
+.flaggedCount {
+  color: var(--color-review);
+  font-weight: 500;
+}
