@@ -12,13 +12,14 @@ export class ExtractApiError extends Error {
   }
 }
 
-export async function extractReport(file: File): Promise<Bundle> {
+export async function extractReport(file: File, signal?: AbortSignal): Promise<Bundle> {
   const form = new FormData();
   form.append('file', file);
 
   const response = await fetch(`${API_BASE_URL}/extract`, {
     method: 'POST',
     body: form,
+    signal,
   });
 
   if (!response.ok) {

@@ -1,16 +1,18 @@
 import { useCallback, useRef, useState } from 'react';
 import type { ChangeEvent, DragEvent } from 'react';
+import { ExtractionProgress } from './ExtractionProgress';
 import styles from './UploadPanel.module.css';
 
 const ACCEPTED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'];
 
 interface UploadPanelProps {
   onSubmit: (file: File) => void;
+  onCancel: () => void;
   isLoading: boolean;
   error: string | null;
 }
 
-export function UploadPanel({ onSubmit, isLoading, error }: UploadPanelProps) {
+export function UploadPanel({ onSubmit, onCancel, isLoading, error }: UploadPanelProps) {
   const [file, setFile] = useState<File | null>(null);
   const [isDragActive, setIsDragActive] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
@@ -77,13 +79,13 @@ export function UploadPanel({ onSubmit, isLoading, error }: UploadPanelProps) {
 
       {(localError || error) && <p className={styles.errorText}>{localError ?? error}</p>}
 
-      <button
-        className={styles.extractButton}
-        onClick={handleExtract}
-        disabled={!file || isLoading}
-      >
-        {isLoading ? 'Reading report…' : 'Extract observations'}
-      </button>
+      {isLoading ? (
+        <ExtractionProgress isActive onCancel={onCancel} />
+      ) : (
+        <button className={styles.extractButton} onClick={handleExtract} disabled={!file}>
+          Extract observations
+        </button>
+      )}
     </section>
   );
 }
