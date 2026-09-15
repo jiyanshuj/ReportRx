@@ -14,9 +14,12 @@ export function createServer() {
   return app;
 }
 
+const app = createServer();
+
 if (require.main === module) {
-  const app = createServer();
   app.listen(env.port, () => {
     console.log(`Medical OCR service listening on port ${env.port}`);
   });
 }
+
+export default app;
